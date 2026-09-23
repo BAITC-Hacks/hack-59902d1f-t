@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7f4">
+  <title>Tariff / Панель кампаний</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="Tariff, на главную">
+        <span class="brand-mark">T<span>+</span></span>
+        <span class="brand-copy"><strong>tariff<span class="brand-dot">.</span></strong><small>CAMPAIGN STUDIO</small></span>
+      </a>
+
+      <div class="sidebar-label">РАБОЧЕЕ ПРОСТРАНСТВО</div>
+      <nav class="nav" aria-label="Разделы">
+        <a class="nav-link active" href="#overview"><span class="nav-icon">▦</span>Обзор</a>
+        <a class="nav-link" href="#inputs"><span class="nav-icon">⇥</span>Входные данные</a>
+        <a class="nav-link" href="#campaigns"><span class="nav-icon">◫</span>Кампании</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-rule"></div>
+        <div class="model-tag"><span class="status-dot"></span> Локальная модель <span>активна</span></div>
+        <p>Результаты рассчитаны на мок-модели проекта. Эффекты на судействе могут отличаться.</p>
+      </div>
+    </aside>
+
+    <main class="main" id="overview">
+      <div class="topline">
+        <div class="breadcrumb">РАБОЧЕЕ ПРОСТРАНСТВО <span>/</span> ОБЗОР</div>
+        <div class="top-actions"><span class="live-pill"><span class="status-dot"></span> Локальный режим</span><span class="avatar">T</span></div>
+      </div>
+
+      <header class="page-head">
+        <div><div class="eyebrow"><span class="eyebrow-line"></span> АНАЛИТИКА КАМПАНИЙ</div><h1>Тарифные кампании<span>.</span></h1><p>От данных и пилотов к решению, которое учитывает бюджет, охват и ожидаемый эффект.</p></div>
+        <div class="head-actions"><button class="button button-ghost" id="download" type="button" disabled><span aria-hidden="true">↓</span> Скачать CSV</button><button class="button button-primary" id="run-top" type="button"><span aria-hidden="true">↗</span> Запустить анализ</button></div>
+      </header>
+
+      <section class="hero" aria-label="Обзор сценария">
+        <div class="hero-left"><div class="hero-kicker"><span class="hero-kicker-dot"></span> ИНТЕЛЛЕКТУАЛЬНЫЙ ПОДБОР</div><h2>Каждый контакт<br>должен <em>работать.</em></h2><p>Агент исследует реакцию аудитории, оценивает неопределённость и выбирает кампании с наибольшим ожидаемым приростом.</p><div class="hero-flow"><span>Данные</span><b>→</b><span>Пилоты</span><b>→</b><span>Решение</span></div></div>
+        <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="orbit-center"><span class="orbit-pulse"></span><strong>T<span>+</span></strong></div><div class="orbit-node n1"></div><div class="orbit-node n2"></div><div class="orbit-node n3"></div><div class="orbit-node n4"></div><div class="orbit-label label-one">СЕГМЕНТЫ <strong>03</strong></div><div class="orbit-label label-two">КАНАЛЫ <strong>04</strong></div></div>
+      </section>
+
+      <section class="section metrics-section" aria-labelledby="metrics-title">
+        <div class="section-head"><div><div class="section-kicker">РЕЗУЛЬТАТ / 01</div><h2 id="metrics-title">Ключевые показатели</h2></div><div class="result-status" id="result-status"><span class="status-dot"></span> Ожидание запуска</div></div>
+        <div class="metric-grid">
+          <article class="metric-card metric-primary"><div class="metric-top"><span>Чистый прирост ARPU</span><span class="metric-symbol">↗</span></div><strong id="metric-net">—</strong><div class="metric-foot"><span id="metric-growth">—</span><span>к базовому ARPU</span></div></article>
+          <article class="metric-card"><div class="metric-top"><span>Валовой прирост</span><span class="metric-symbol">↗</span></div><strong id="metric-gross">—</strong><div class="metric-foot">До расходов на коммуникации</div></article>
+          <article class="metric-card"><div class="metric-top"><span>Затраты</span><span class="metric-symbol">◌</span></div><strong id="metric-cost">—</strong><div class="metric-foot"><span id="metric-budget">—</span><span>от бюджета 100 000</span></div></article>
+          <article class="metric-card"><div class="metric-top"><span>Уникальный охват</span><span class="metric-symbol">◎</span></div><strong id="metric-reach">—</strong><div class="metric-foot"><span id="metric-coverage">—</span><span>от базы абонентов</span></div></article>
+        </div>
+      </section>
+
+      <div class="workspace-grid">
+        <section class="panel input-panel" id="inputs" aria-labelledby="input-title">
+          <div class="panel-head"><div><div class="section-kicker">НАСТРОЙКА / 02</div><h2 id="input-title">Входные данные</h2></div><span class="panel-index">01—03</span></div>
+          <p class="panel-intro">Оставьте файлы пустыми для запуска на данных проекта или загрузите свои CSV.</p>
+          <div class="file-stack">
+            <label class="file-card" for="profile-file"><span class="file-icon">01</span><span class="file-copy"><strong>Профиль абонентов</strong><small id="profile-name">customer_profile.csv · по умолчанию</small></span><span class="file-action">↗</span><input type="file" id="profile-file" accept=".csv,text/csv"></label>
+            <label class="file-card" for="history-file"><span class="file-icon">02</span><span class="file-copy"><strong>История переходов</strong><small id="history-name">change_tariff.csv · по умолчанию</small></span><span class="file-action">↗</span><input type="file" id="history-file" accept=".csv,text/csv"></label>
+            <label class="file-card" for="tariffs-file"><span class="file-icon">03</span><span class="file-copy"><strong>Справочник тарифов</strong><small id="tariffs-name">dict_tariff.csv · по умолчанию</small></span><span class="file-action">↗</span><input type="file" id="tariffs-file" accept=".csv,text/csv"></label>
+          </div>
+          <div class="field-row"><label class="field"><span>Seed <small>для повторяемости</small></span><input id="seed" type="number" min="0" max="2000000000" step="1" value="42"></label><label class="field"><span>Число прогонов <small>1–30</small></span><input id="runs" type="number" min="1" max="30" step="1" value="1"></label></div>
+          <button class="button button-primary run-wide" id="run" type="button"><span aria-hidden="true">↗</span> Запустить анализ <span class="run-arrow">→</span></button>
+          <div class="notice" id="notice" role="status">Готово к запуску. Первый результат появится здесь после анализа.</div>
+        </section>
+
+        <section class="panel overview-panel" aria-labelledby="breakdown-title"><div class="panel-head"><div><div class="section-kicker">СТРУКТУРА / 03</div><h2 id="breakdown-title">Как сложился результат</h2></div><span class="panel-index" id="seed-label">SEED 42</span></div><div class="breakdown-chart"><div class="chart-track"><div class="chart-label"><span>Валовой прирост</span><strong id="bar-gross-value">—</strong></div><div class="bar-bg"><div class="bar bar-green" id="bar-gross"></div></div></div><div class="chart-track"><div class="chart-label"><span>Расходы</span><strong id="bar-cost-value">—</strong></div><div class="bar-bg"><div class="bar bar-sand" id="bar-cost"></div></div></div><div class="chart-track"><div class="chart-label"><span>Чистый прирост</span><strong id="bar-net-value">—</strong></div><div class="bar-bg"><div class="bar bar-dark" id="bar-net"></div></div></div></div><div class="overview-divider"></div><div class="mini-stats"><div><span>Пилотов</span><strong id="stat-pilots">— <small>/ 20</small></strong></div><div><span>Финальных кампаний</span><strong id="stat-final">— <small>/ 10</small></strong></div><div><span>Контактов</span><strong id="stat-contacts">— <small>/ 15 000</small></strong></div></div><div class="data-source"><span class="status-dot"></span><span id="data-source">Данные проекта</span><span id="data-count">—</span></div></section>
+      </div>
+
+      <section class="panel stability-panel" id="stability" aria-labelledby="stability-title"><div class="panel-head"><div><div class="section-kicker">УСТОЙЧИВОСТЬ / 04</div><h2 id="stability-title">Результаты прогонов</h2></div><span class="panel-index" id="runs-label">1 ПРОГОН</span></div><div class="stability-layout"><div class="spark-area" id="spark-area"><div class="chart-empty">Запустите анализ, чтобы увидеть динамику результатов по seed.</div></div><div class="stability-stats"><div><span>Медиана</span><strong id="summary-median">—</strong></div><div><span>Минимум</span><strong id="summary-min">—</strong></div><div><span>Положительных</span><strong id="summary-positive">—</strong></div></div></div></section>
+
+      <section class="panel campaigns-panel" id="campaigns" aria-labelledby="campaigns-title"><div class="panel-head campaign-head"><div><div class="section-kicker">ДЕТАЛИ / 05</div><h2 id="campaigns-title">Кампании и пилоты</h2></div><div class="table-tools"><span id="campaign-count">0 записей</span><div class="segmented" role="group" aria-label="Фильтр кампаний"><button class="selected" data-filter="all" type="button">Все</button><button data-filter="Кампания" type="button">Кампании</button><button data-filter="Пилот" type="button">Пилоты</button></div></div></div><div class="table-wrap"><table><thead><tr><th>Название</th><th>Тип</th><th>Сегмент</th><th>Переход</th><th>Канал</th><th class="num">Контакты</th><th class="num">Затраты</th><th class="num">Прирост</th></tr></thead><tbody id="campaign-body"><tr><td colspan="8" class="empty-row">Нет данных. Запустите анализ.</td></tr></tbody></table></div><div class="table-note">Прирост по строкам показан до дедупликации абонентов между кампаниями.</div></section>
+
+      <footer class="footer"><span>tariff<span class="brand-dot">.</span> / campaign studio</span><span>Локальный аналитический интерфейс · 2026</span></footer>
+    </main>
+  </div>
+</body>
+</html>
